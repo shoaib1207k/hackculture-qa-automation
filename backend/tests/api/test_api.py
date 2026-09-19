@@ -90,6 +90,11 @@ def test_score_runs_the_workflow_and_saves_the_result(client, store, monkeypatch
     assert calls == ["3613792"] and store.get("3613792").decision == "AUTO_PASS"
 
 
+def test_the_score_carries_the_confidence_threshold_the_gate_uses(client, monkeypatch):
+    fake_workflow(monkeypatch)
+    assert client.post("/api/leads/3613792/score").json()["confidence_threshold"] == 0.75
+
+
 def test_a_saved_score_is_returned_without_rerunning_unless_forced(client, store, monkeypatch):
     calls = fake_workflow(monkeypatch)
     client.post("/api/leads/3613792/score")

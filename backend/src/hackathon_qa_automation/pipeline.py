@@ -12,7 +12,7 @@ from strands.multiagent.base import Status
 
 from .common.loaders import DATA_DIR, load_checklist, load_lead, load_transcript
 from .graph import build_graph
-from .graph.gate import Decision, decide
+from .graph.gate import CONFIDENCE_THRESHOLD, Decision, decide
 from .graph.nodes import VERDICTS_KEY, GateResult
 from .models import CheckVerdict
 
@@ -27,6 +27,8 @@ class LeadScore(BaseModel):
     decision: Decision
     reasons: list[str]
     verdicts: list[CheckVerdict]
+    # A check below this confidence is routed to a human; the UI shows it as unclear.
+    confidence_threshold: float = CONFIDENCE_THRESHOLD
     error: Optional[str] = None
 
 
