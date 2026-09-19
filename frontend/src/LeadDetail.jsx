@@ -1,20 +1,32 @@
 import { useEffect, useRef, useState } from "react";
 import {
   Accordion, AccordionDetails, AccordionSummary, Alert, AlertTitle, Box, Button, Card,
-  CardContent, Chip, CircularProgress, Divider, Grid, Stack, Typography,
+  CardContent, Chip, CircularProgress, Divider, Stack, Typography,
 } from "@mui/material";
+import { alpha } from "@mui/material/styles";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { getLead, scoreLead } from "./api";
 import {
-  CRM_GROUPS, DECISION_INFO, SPEAKER_LABEL, TYPE_LABEL, formatDate, formatValue, humanize, mmss,
-  timeRange, verdictInfo,
+  CRM_GROUPS, DECISION_INFO, SPEAKER_LABEL, TYPE_LABEL, effectiveVerdict, formatDate, formatValue,
+  humanize, isLowConfidence, mmss, timeRange, verdictInfo,
 } from "./labels";
 
-// Failed critical checks first, then unclear ones, then non-critical notes.
-const attentionRank = (v) => (v.verdict === "fail" && v.critical ? 0 : v.verdict === "uncertain" ? 1 : 2);
+// Colours from least to most severe. A transcript line cited by several checks takes the worst.
+const SEVERITY = ["success", "info", "warning", "error"];
+const LEGEND = { error: "Failed", warning: "Unclear", info: "Note", success: "Passed" };
 
-function CheckRow({ v, segById, onJump }) {
-  const info = verdictInfo(v);
+const RESULT_WORD = { pass: "passed", fail: "failed", uncertain: "unclear" };
+
+// Failed critical checks first, then unclear ones, then non-critical notes.
+const attentionRank = (v, threshold) => {
+  const verdict = effectiveVerdict(v, threshold);
+  return verdict === "fail" && v.critical ? 0 : verdict === "uncertain" ? 1 : 2;
+};
+
+function CheckRow({ v, threshold, segById, onJump }) {
+  const info = verdictInfo(v, threshold);
+  const low = isLowConfidence(v, threshold);
+  const pct = Math.round(v.confidence * 100);
   const when = timeRange(v.timestamp_start, v.timestamp_end);
   return (
     <Accordion variant="outlined" disableGutters>
@@ -25,12 +37,18 @@ function CheckRow({ v, segById, onJump }) {
           {v.critical && <Chip size="small" variant="outlined" color="error" label="Critical" />}
           <Chip size="small" variant="outlined" label={TYPE_LABEL[v.check_type]} />
           <Typography variant="body2" color="text.secondary">
-            {v.verdict === "uncertain" ? "Could not be confirmed" : `${Math.round(v.confidence * 100)}% confident`}
+            {v.verdict === "uncertain" ? "Could not be confirmed" : low ? `Low confidence (${pct}%)` : `${pct}% confident`}
             {when ? ` · at ${when}` : ""}
           </Typography>
         </Stack>
       </AccordionSummary>
       <AccordionDetails>
+        {low && (
+          <Alert severity="warning" sx={{ mb: 2 }}>
+            This check came out as {RESULT_WORD[v.verdict]}, but the confidence ({pct}%) is below the{" "}
+            {Math.round(threshold * 100)}% needed, so a person should confirm it before the sale goes through.
+          </Alert>
+        )}
         <Typography variant="subtitle2">Why</Typography>
         <Typography sx={{ mb: 2 }}>{v.reasoning}</Typography>
 
@@ -64,12 +82,12 @@ function CheckRow({ v, segById, onJump }) {
   );
 }
 
-function CheckGroup({ title, checks, segById, onJump }) {
+function CheckGroup({ title, checks, threshold, segById, onJump }) {
   if (!checks.length) return null;
   return (
     <Box sx={{ mb: 3 }}>
       <Typography variant="h6" gutterBottom>{title} · {checks.length}</Typography>
-      {checks.map((v) => <CheckRow key={v.check_id} v={v} segById={segById} onJump={onJump} />)}
+      {checks.map((v) => <CheckRow key={v.check_id} v={v} threshold={threshold} segById={segById} onJump={onJump} />)}
     </Box>
   );
 }
@@ -136,10 +154,21 @@ export default function LeadDetail({ leadId, onScored }) {
   if (!lead) return error ? <Alert severity="error">{error}</Alert> : <CircularProgress />;
 
   const verdicts = score?.verdicts ?? [];
-  const cited = new Set(verdicts.flatMap((v) => v.evidence_segment_ids));
+  const threshold = score?.confidence_threshold ?? 0.75;
+  // segment id -> colour of the worst result among the checks that cite it
+  const segColor = {};
+  for (const v of verdicts) {
+    const color = verdictInfo(v, threshold).color;
+    for (const id of v.evidence_segment_ids) {
+      if (!segColor[id] || SEVERITY.indexOf(color) > SEVERITY.indexOf(segColor[id])) segColor[id] = color;
+    }
+  }
+  const legend = SEVERITY.filter((c) => Object.values(segColor).includes(c)).reverse();
   const segById = Object.fromEntries(lead.transcript.map((s) => [s.segment_id, s]));
-  const needsAttention = verdicts.filter((v) => v.verdict !== "pass").sort((a, b) => attentionRank(a) - attentionRank(b));
-  const passed = verdicts.filter((v) => v.verdict === "pass");
+  const isPassed = (v) => effectiveVerdict(v, threshold) === "pass";
+  const needsAttention = verdicts.filter((v) => !isPassed(v))
+    .sort((a, b) => attentionRank(a, threshold) - attentionRank(b, threshold));
+  const passed = verdicts.filter(isPassed);
   const decision = score && DECISION_INFO[score.decision];
 
   return (
@@ -175,37 +204,49 @@ export default function LeadDetail({ leadId, onScored }) {
 
       {score && (
         <Box>
-          <CheckGroup title="Needs attention" checks={needsAttention} segById={segById} onJump={jumpTo} />
-          <CheckGroup title="Passed" checks={passed} segById={segById} onJump={jumpTo} />
+          <CheckGroup title="Needs attention" checks={needsAttention} threshold={threshold} segById={segById} onJump={jumpTo} />
+          <CheckGroup title="Passed" checks={passed} threshold={threshold} segById={segById} onJump={jumpTo} />
         </Box>
       )}
 
-      <Grid container spacing={3}>
-        <Grid size={{ xs: 12, md: 7 }}>
+      <Box sx={{ display: "grid", gap: 3, gridTemplateColumns: { xs: "1fr", md: "7fr 5fr" } }}>
+        <Box>
           <Typography variant="h6">Transcript</Typography>
-          <Typography variant="body2" color="text.secondary" gutterBottom>
-            Highlighted lines are the evidence behind a check.
-          </Typography>
-          <Card variant="outlined" sx={{ maxHeight: "70vh", overflowY: "auto" }}>
-            {lead.transcript.map((s) => (
-              <Box key={s.segment_id} ref={(el) => { segRefs.current[s.segment_id] = el; }}
-                   sx={{
-                     px: 2, py: 1, transition: "background-color .3s",
-                     bgcolor: focused === s.segment_id ? "warning.main" : cited.has(s.segment_id) ? "warning.light" : "transparent",
-                   }}>
-                <Typography variant="caption" color="text.secondary">
-                  {SPEAKER_LABEL[s.speaker]} · {mmss(s.start)}
-                </Typography>
-                <Typography variant="body2">{s.text}</Typography>
-              </Box>
-            ))}
+          <Stack direction="row" spacing={1} sx={{ alignItems: "center", flexWrap: "wrap", rowGap: 0.5, mb: 1 }}>
+            <Typography variant="body2" color="text.secondary">Highlighted lines are the evidence behind a check:</Typography>
+            {legend.map((c) => <Chip key={c} size="small" variant="outlined" color={c} label={LEGEND[c]} />)}
+          </Stack>
+        </Box>
+        <Typography variant="h6">CRM record</Typography>
+
+        {/* On wide screens the transcript card is taken out of the row's height (absolute), so the
+            row is exactly as tall as the CRM record and both cards line up top and bottom; the
+            transcript scrolls inside its card. When stacked, it gets a fixed height instead. */}
+        <Box sx={{ position: "relative", height: { xs: "60vh", md: "auto" } }}>
+          <Card variant="outlined" sx={{ position: "absolute", inset: 0, overflowY: "auto" }}>
+            {lead.transcript.map((s) => {
+              const c = segColor[s.segment_id];
+              const isFocused = focused === s.segment_id;
+              return (
+                <Box key={s.segment_id} ref={(el) => { segRefs.current[s.segment_id] = el; }}
+                     sx={{
+                       px: 2, py: 1, transition: "background-color .3s", borderLeft: 4,
+                       borderColor: c ? `${c}.main` : "transparent",
+                       bgcolor: isFocused ? `${c}.main` : c ? (t) => alpha(t.palette[c].main, 0.16) : "transparent",
+                       color: isFocused ? `${c}.contrastText` : "inherit",
+                       "& .MuiTypography-root": isFocused ? { color: "inherit" } : undefined,
+                     }}>
+                  <Typography variant="caption" color="text.secondary">
+                    {SPEAKER_LABEL[s.speaker]} · {mmss(s.start)}
+                  </Typography>
+                  <Typography variant="body2">{s.text}</Typography>
+                </Box>
+              );
+            })}
           </Card>
-        </Grid>
-        <Grid size={{ xs: 12, md: 5 }}>
-          <Typography variant="h6" gutterBottom>CRM record</Typography>
-          <CrmRecord crm={lead.crm} />
-        </Grid>
-      </Grid>
+        </Box>
+        <CrmRecord crm={lead.crm} />
+      </Box>
     </Stack>
   );
 }

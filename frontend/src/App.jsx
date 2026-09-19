@@ -6,6 +6,7 @@ import {
 import { PieChart } from "@mui/x-charts/PieChart";
 import { listLeads, scoreLead } from "./api";
 import LeadDetail from "./LeadDetail.jsx";
+import { effectiveVerdict } from "./labels";
 
 export const DECISION_COLOR = { HOLD: "error", HUMAN_QA: "warning", AUTO_PASS: "success" };
 
@@ -114,7 +115,8 @@ export default function App() {
                     </TableRow>
                   )}
                   {leads.map((l) => {
-                    const vs = l.score?.verdicts ?? [];
+                    const t = l.score?.confidence_threshold ?? 0.75;
+                    const vs = (l.score?.verdicts ?? []).map((v) => effectiveVerdict(v, t));
                     const busy = processing.includes(l.lead_id);
                     return (
                       <TableRow key={l.lead_id} hover={!!l.score}
@@ -129,8 +131,8 @@ export default function App() {
                             ? <Chip size="small" label={l.score.decision} color={DECISION_COLOR[l.score.decision]} />
                             : <Chip size="small" label="not processed" variant="outlined" />}
                         </TableCell>
-                        <TableCell>{l.score ? vs.filter((v) => v.verdict === "fail").length : "–"}</TableCell>
-                        <TableCell>{l.score ? vs.filter((v) => v.verdict === "uncertain").length : "–"}</TableCell>
+                        <TableCell>{l.score ? vs.filter((v) => v === "fail").length : "–"}</TableCell>
+                        <TableCell>{l.score ? vs.filter((v) => v === "uncertain").length : "–"}</TableCell>
                         <TableCell align="right">
                           {l.score ? (
                             <Button size="small" onClick={() => open(l.lead_id)}>View details</Button>

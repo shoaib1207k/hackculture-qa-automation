@@ -45,10 +45,18 @@ export const DECISION_INFO = {
   },
 };
 
+// What a check counts as once its confidence is taken into account. The gate sends a check
+// below the threshold to a human whatever its verdict, so the UI shows it as unclear too.
+export const isLowConfidence = (v, threshold) => v.verdict !== "uncertain" && v.confidence < threshold;
+
+export const effectiveVerdict = (v, threshold) =>
+  v.verdict === "uncertain" || isLowConfidence(v, threshold) ? "uncertain" : v.verdict;
+
 // One check's result. A failed check that is not critical is a coaching note, not a failure.
-export const verdictInfo = (v) => {
-  if (v.verdict === "pass") return { label: "Passed", color: "success" };
-  if (v.verdict === "uncertain") return { label: "Unclear", color: "warning" };
+export const verdictInfo = (v, threshold) => {
+  const verdict = effectiveVerdict(v, threshold);
+  if (verdict === "pass") return { label: "Passed", color: "success" };
+  if (verdict === "uncertain") return { label: "Unclear", color: "warning" };
   return v.critical ? { label: "Failed", color: "error" } : { label: "Note", color: "info" };
 };
 
