@@ -1,0 +1,859 @@
+{
+  "metadata": {
+    "source": "User-provided redacted outbound internet sales transcript",
+    "timestamp_status": "SYNTHETIC_ESTIMATES",
+    "dummy_data_status": "SYNTHETIC",
+    "speaker_mapping": {
+      "Speaker 1": "CUSTOMER",
+      "Speaker 2": "AGENT"
+    },
+    "note": "Personal identifiers were replaced with synthetic values. Timestamps were generated from transcript length and are not original audio timestamps."
+  },
+  "lead": {
+    "lead_id": "3613790",
+    "retailer_id": "Retailer1",
+    "call_date": "2026-09-19"
+  },
+  "segments": [
+    {
+      "segment_id": "S001",
+      "speaker": "CUSTOMER",
+      "start": 0.0,
+      "end": 1.2,
+      "text": "Hello. Sarah speaking."
+    },
+    {
+      "segment_id": "S002",
+      "speaker": "AGENT",
+      "start": 1.6,
+      "end": 7.3,
+      "text": "Yes. Hi, Sarah. Good day. This is Daniel from Internet's comparison. How are you?"
+    },
+    {
+      "segment_id": "S003",
+      "speaker": "CUSTOMER",
+      "start": 7.7,
+      "end": 9.8,
+      "text": "Good. Thanks. How are you?"
+    },
+    {
+      "segment_id": "S004",
+      "speaker": "AGENT",
+      "start": 10.2,
+      "end": 58.8,
+      "text": "Yeah. I'm good. Thank you. And we noticed that you're looking for better Internet plans, and we're calling to assist you with this.Yeah.K. And as I check it, your address is 18 Harbour View Drive, Parramatta NSW 2150 Correct. Sarah. Yep. 18 Harbour View Drive, Parramatta NSW 2150. K. By the way, please be advised that this call will be recorded for quality assuranceand, training purposes. K? Nowlet me double check the address. Bear with me.There you go. As I check it yeah. The address is already an NBN ready, fiber to the premises technology. Okay? Now just to ask, Sarah, who's your current Internet service provider? Do you have one?IPRIMUS.You are currently with iPRIMUS.How much are you paying?"
+    },
+    {
+      "segment_id": "S005",
+      "speaker": "CUSTOMER",
+      "start": 59.2,
+      "end": 63.6,
+      "text": "They reduced it today to sixty five. That's all right here."
+    },
+    {
+      "segment_id": "S006",
+      "speaker": "AGENT",
+      "start": 64.0,
+      "end": 79.1,
+      "text": "Sixty five dollars for how many MBPS? Do you know the speed? How do you care? Twenty five.Twenty five Mbps?Yeah.Okay.And how many people are using the Internet?Just myself.Are you used to Internet? Are you do gaming,video streaming?"
+    },
+    {
+      "segment_id": "S007",
+      "speaker": "CUSTOMER",
+      "start": 79.5,
+      "end": 96.3,
+      "text": "Work from home? Yeah. I do. No. I don't work from home. I just watch, you know, Netflix and that sort of stuff, andI've seen my,TV still at, like, channel seven channel nine, whatever. Okay. I stream that through the Internet."
+    },
+    {
+      "segment_id": "S008",
+      "speaker": "AGENT",
+      "start": 96.7,
+      "end": 102.4,
+      "text": "And do you need the home phone line?Do you need a landline or no?"
+    },
+    {
+      "segment_id": "S009",
+      "speaker": "CUSTOMER",
+      "start": 102.8,
+      "end": 104.0,
+      "text": "No."
+    },
+    {
+      "segment_id": "S010",
+      "speaker": "AGENT",
+      "start": 104.4,
+      "end": 115.4,
+      "text": "Okay. Because I just want to tell you, I can give you a twenty five MBBS for,only forty two dollars and ninetyMhmm. For the first six months."
+    },
+    {
+      "segment_id": "S011",
+      "speaker": "CUSTOMER",
+      "start": 115.8,
+      "end": 119.5,
+      "text": "Yep. And then what does it go up to?"
+    },
+    {
+      "segment_id": "S012",
+      "speaker": "AGENT",
+      "start": 119.9,
+      "end": 127.6,
+      "text": "Seventy two dollars and ninety. That's the regular price. Yeah. See, I'm I'm beyond that. But with that, I"
+    },
+    {
+      "segment_id": "S013",
+      "speaker": "CUSTOMER",
+      "start": 128.0,
+      "end": 136.2,
+      "text": "might save myself twenty dollars a month for six months, butthen it's then I have seven dollars a month here."
+    },
+    {
+      "segment_id": "S014",
+      "speaker": "AGENT",
+      "start": 136.6,
+      "end": 155.4,
+      "text": "I'm going on. But So you're notno last in contract with the plan. It's just a month to month contract.I mean Yeah. Before the six weeks expire,you can visit again our website and see if we can give you another set of promotion of this, ma'am."
+    },
+    {
+      "segment_id": "S015",
+      "speaker": "CUSTOMER",
+      "start": 155.8,
+      "end": 163.5,
+      "text": "Yeah. Yeah. Maybe I'll juststay where I am. I couldn't be bothered because I have to paynot much savings."
+    },
+    {
+      "segment_id": "S016",
+      "speaker": "AGENT",
+      "start": 163.9,
+      "end": 172.1,
+      "text": "I really understand. Again, that's still Okay.Twenty dollars.I can also give you a free modem with thatwith no extra cost."
+    },
+    {
+      "segment_id": "S017",
+      "speaker": "CUSTOMER",
+      "start": 172.5,
+      "end": 174.1,
+      "text": "Who is that through?"
+    },
+    {
+      "segment_id": "S018",
+      "speaker": "AGENT",
+      "start": 174.5,
+      "end": 176.2,
+      "text": "That is from NovaConnect."
+    },
+    {
+      "segment_id": "S019",
+      "speaker": "CUSTOMER",
+      "start": 176.6,
+      "end": 186.0,
+      "text": "Right. NovaConnect.So free modemYep. And forty nine dollars a month for forty two dollars a month. Dollars.Yeah.Do I get a check for it?"
+    },
+    {
+      "segment_id": "S020",
+      "speaker": "AGENT",
+      "start": 186.4,
+      "end": 199.4,
+      "text": "No. All the NBN,all all the NBN plans, they're using only one network, all the retailers. That's the NBN phone.K? But for thethe mobile SIM plan, kindly use it at Telstra network."
+    },
+    {
+      "segment_id": "S021",
+      "speaker": "CUSTOMER",
+      "start": 199.8,
+      "end": 204.3,
+      "text": "I can.And would it be a new modemor a refurbished one?"
+    },
+    {
+      "segment_id": "S022",
+      "speaker": "AGENT",
+      "start": 204.7,
+      "end": 217.4,
+      "text": "So that's the brand new modembrand new modem. It's all yours.It's hundred percent free. Even you switch provider,even you move to a different property,you can keep and use the same modem."
+    },
+    {
+      "segment_id": "S023",
+      "speaker": "CUSTOMER",
+      "start": 217.8,
+      "end": 234.1,
+      "text": "No need to repair. Happens if what happens if at the end of six months when it goes up to seventy two dollarsand I change,do I get to get the modemor do I get to the account then? No. No."
+    },
+    {
+      "segment_id": "S024",
+      "speaker": "AGENT",
+      "start": 234.5,
+      "end": 248.4,
+      "text": "You it's hundred percent free. It's all yours. Even you switch provider,even you move to a different property,you can use and keep it. No need to return it. K? Again, it's hundred percent free."
+    },
+    {
+      "segment_id": "S025",
+      "speaker": "CUSTOMER",
+      "start": 248.8,
+      "end": 254.9,
+      "text": "Okay. So how does it how does it work? How does how doesget changed over?"
+    },
+    {
+      "segment_id": "S026",
+      "speaker": "AGENT",
+      "start": 255.3,
+      "end": 271.2,
+      "text": "No. We can quickly set this up for you without paying any status fee.K? NowI just want to tell you that how do I get the modem?Yeah. It will be delivered to you within three to five business days."
+    },
+    {
+      "segment_id": "S027",
+      "speaker": "CUSTOMER",
+      "start": 271.6,
+      "end": 276.1,
+      "text": "Okay. And is there a cost involved in having it delivered?"
+    },
+    {
+      "segment_id": "S028",
+      "speaker": "AGENT",
+      "start": 276.5,
+      "end": 279.3,
+      "text": "No. It's hundred percent. No extra cost."
+    },
+    {
+      "segment_id": "S029",
+      "speaker": "CUSTOMER",
+      "start": 279.7,
+      "end": 282.6,
+      "text": "Okay.Alright. Yep. Sounds like a good deal."
+    },
+    {
+      "segment_id": "S030",
+      "speaker": "AGENT",
+      "start": 283.0,
+      "end": 383.0,
+      "text": "Yeah. That's why we can quickly set it up for you so you can get the free modem,k, within three to five business days. Now I just want to tell you that again, here are some detail, here here are some more details about it, ma'am. This value plan from NovaConnecthelps with comes with a one to one contract only and, again, provides twenty five Mbps typical in download speed and eight point five Mbps typical in the upload speed from seven PM to eleven PM. Again, the original plan cost is seventy two dollars and ninety per month, but we have an offer ongoing where you will get this plan as forty two dollars and ninety only per month for the first six months and then seventy two dollars and ninety. K? And then,I just want to tell you that the modem that you will receive is the Netcom CF forty Wi Fi six modem. K? Again, it's hundred percent free. No extra cost. It's all yours. K? And then the good thing with the modem, Sarah, it's suitable for FTTT,HFC,FTTs, and fixed wireless connection types. That means it's almost compatible to all NBN plans. K? And this is already a Wi Fi six modem.It's already preconfigured. That means it's plugged and free. K? And it's still used in the twenty ten. Okay? So the delivery of the modem into a PowerPointwhen I get it? You just did And it's good to go. K?"
+    },
+    {
+      "segment_id": "S031",
+      "speaker": "CUSTOMER",
+      "start": 383.4,
+      "end": 389.9,
+      "text": "Okay. So there's no setting up or anything like that. You just plug it in? Yep."
+    },
+    {
+      "segment_id": "S032",
+      "speaker": "AGENT",
+      "start": 390.3,
+      "end": 417.3,
+      "text": "Because it's already preconfigured to NovaConnect. K? That's why you you don't need to reconfigure it. K? Okay. Yep.And then again, the total minimum cost will be forty two dollars and ninety only. No setup fee. No any additional cost. K?Yep.And this will be under your name. Am I correct?Yes.How do you want to address your name, dismissed or missus, or do you have any title?"
+    },
+    {
+      "segment_id": "S033",
+      "speaker": "CUSTOMER",
+      "start": 417.7,
+      "end": 419.3,
+      "text": "Missus Sarah.Yeah. Sarah Mitchell."
+    },
+    {
+      "segment_id": "S034",
+      "speaker": "AGENT",
+      "start": 419.7,
+      "end": 425.8,
+      "text": "Yeah. Can you please verify again your first and last name as per ID, please?"
+    },
+    {
+      "segment_id": "S035",
+      "speaker": "CUSTOMER",
+      "start": 426.2,
+      "end": 428.3,
+      "text": "Sorry. I didn't get that."
+    },
+    {
+      "segment_id": "S036",
+      "speaker": "AGENT",
+      "start": 428.7,
+      "end": 433.6,
+      "text": "Can you please verify your first and last name as per ID?"
+    },
+    {
+      "segment_id": "S037",
+      "speaker": "CUSTOMER",
+      "start": 434.0,
+      "end": 435.2,
+      "text": "Sarah Mitchell."
+    },
+    {
+      "segment_id": "S038",
+      "speaker": "AGENT",
+      "start": 435.6,
+      "end": 436.8,
+      "text": "Sarah or Sarah?"
+    },
+    {
+      "segment_id": "S039",
+      "speaker": "CUSTOMER",
+      "start": 437.2,
+      "end": 439.2,
+      "text": "Well, I go by Sarah."
+    },
+    {
+      "segment_id": "S040",
+      "speaker": "AGENT",
+      "start": 439.6,
+      "end": 460.9,
+      "text": "Sarah. Okay. Sarah. Yeah.Okay. But, again,Sarah. Right? Because that is the exact bill that you will,you will see on the bill.K? Yep. Mhmm. Missus Sarah Mitchell. Right?Yes.Okay. And then your email address, can you please also verify it? It's sarah.mitchell@example.com.Thank you. And then your mobile number, can you please also verify it?"
+    },
+    {
+      "segment_id": "S041",
+      "speaker": "CUSTOMER",
+      "start": 461.3,
+      "end": 462.5,
+      "text": "0412 555 783."
+    },
+    {
+      "segment_id": "S042",
+      "speaker": "AGENT",
+      "start": 462.9,
+      "end": 465.3,
+      "text": "Okay. And your date of birth?"
+    },
+    {
+      "segment_id": "S043",
+      "speaker": "CUSTOMER",
+      "start": 465.7,
+      "end": 467.0,
+      "text": "14 March 1989."
+    },
+    {
+      "segment_id": "S044",
+      "speaker": "AGENT",
+      "start": 467.4,
+      "end": 472.3,
+      "text": "Okay. And then do you want to add a secondary mobile number?"
+    },
+    {
+      "segment_id": "S045",
+      "speaker": "CUSTOMER",
+      "start": 472.7,
+      "end": 474.3,
+      "text": "Sorry. What was that?"
+    },
+    {
+      "segment_id": "S046",
+      "speaker": "AGENT",
+      "start": 474.7,
+      "end": 483.3,
+      "text": "Do you want to add a secondary mobile number or alternate mobile number?No. Okay.And you are currently with I Primus. Right?"
+    },
+    {
+      "segment_id": "S047",
+      "speaker": "CUSTOMER",
+      "start": 483.7,
+      "end": 484.9,
+      "text": "That's correct. Yes."
+    },
+    {
+      "segment_id": "S048",
+      "speaker": "AGENT",
+      "start": 485.3,
+      "end": 493.0,
+      "text": "Are you able to pull up your I Primus bill or no? Right now? Hang yep. Hang on.Yes, please."
+    },
+    {
+      "segment_id": "S049",
+      "speaker": "CUSTOMER",
+      "start": 493.4,
+      "end": 494.7,
+      "text": "Yep. Got IPR-48291736."
+    },
+    {
+      "segment_id": "S050",
+      "speaker": "AGENT",
+      "start": 495.1,
+      "end": 501.6,
+      "text": "Can you please check if you can see the a b c ID?A b c ID."
+    },
+    {
+      "segment_id": "S051",
+      "speaker": "CUSTOMER",
+      "start": 502.0,
+      "end": 503.2,
+      "text": "A b c?"
+    },
+    {
+      "segment_id": "S052",
+      "speaker": "AGENT",
+      "start": 503.6,
+      "end": 506.1,
+      "text": "Yep. A b c I d."
+    },
+    {
+      "segment_id": "S053",
+      "speaker": "CUSTOMER",
+      "start": 506.5,
+      "end": 511.8,
+      "text": "I got issue date. I've seen that balance.Clear button.Customer number? Is that it?"
+    },
+    {
+      "segment_id": "S054",
+      "speaker": "AGENT",
+      "start": 512.2,
+      "end": 517.9,
+      "text": "No. ABC IDs.You can,you can check it, but if it's not visible, it's okay."
+    },
+    {
+      "segment_id": "S055",
+      "speaker": "CUSTOMER",
+      "start": 518.3,
+      "end": 520.3,
+      "text": "I've got Internet service number."
+    },
+    {
+      "segment_id": "S056",
+      "speaker": "AGENT",
+      "start": 520.7,
+      "end": 526.8,
+      "text": "It's okay if you don't see it. That means it's not visible on the bill."
+    },
+    {
+      "segment_id": "S057",
+      "speaker": "CUSTOMER",
+      "start": 527.2,
+      "end": 533.0,
+      "text": "Yeah. No. I I can't see it anywhere there. It's okay. And then again,"
+    },
+    {
+      "segment_id": "S058",
+      "speaker": "AGENT",
+      "start": 533.4,
+      "end": 566.8,
+      "text": "the connection address will be 18 Harbour View Drive, Parramatta NSW 2150. Correct? Yeah. And how how soon do you want your connection to be at the address? As soon as possible, or do you prefer the same? As soon as possible.As soon as possible. Okay. And, do you want your modem to be delivered at the same address, or do you want a different address?Same address? Same address. Yeah. Okay. Again, the delivery will be three to five business days. K?"
+    },
+    {
+      "segment_id": "S059",
+      "speaker": "CUSTOMER",
+      "start": 567.2,
+      "end": 585.2,
+      "text": "Yeah.No. Just mhmm. Just with with the delivery,of the modem, the Harbour View Driveentrance is closed at the moment. Sothey will have to come to Unit 4, 18 Harbour View Drive, Parramatta NSW 2150.There's two entrances.Unit 4, 18 Harbour View Drive, Parramatta NSW 2150."
+    },
+    {
+      "segment_id": "S060",
+      "speaker": "AGENT",
+      "start": 585.6,
+      "end": 586.8,
+      "text": "I see. Okay."
+    },
+    {
+      "segment_id": "S061",
+      "speaker": "CUSTOMER",
+      "start": 587.2,
+      "end": 591.3,
+      "text": "Yeah. Because I can't get you in the pre code."
+    },
+    {
+      "segment_id": "S062",
+      "speaker": "AGENT",
+      "start": 591.7,
+      "end": 604.4,
+      "text": "I see. Okay.It's already noted. Okay? Now, again, to set up your account, Sarah, we need to collect your preferred payment method. Are you using a credit card or debit card?"
+    },
+    {
+      "segment_id": "S063",
+      "speaker": "CUSTOMER",
+      "start": 604.8,
+      "end": 606.4,
+      "text": "And my what, sir?"
+    },
+    {
+      "segment_id": "S064",
+      "speaker": "AGENT",
+      "start": 606.8,
+      "end": 618.6,
+      "text": "I again, to set up your account, we need to collect your preferred payment method because this will be direct debitedevery month from the account from the account. Mhmm."
+    },
+    {
+      "segment_id": "S065",
+      "speaker": "CUSTOMER",
+      "start": 619.0,
+      "end": 620.2,
+      "text": "Okay."
+    },
+    {
+      "segment_id": "S066",
+      "speaker": "AGENT",
+      "start": 620.6,
+      "end": 632.9,
+      "text": "Are youokay. But before that, I need to mute the recording. K?Okay. The recording is already resumed. Now mhmm.Can you please,do you have access on your email right now? Right?"
+    },
+    {
+      "segment_id": "S067",
+      "speaker": "CUSTOMER",
+      "start": 633.3,
+      "end": 634.5,
+      "text": "Yes. I do."
+    },
+    {
+      "segment_id": "S068",
+      "speaker": "AGENT",
+      "start": 634.9,
+      "end": 647.1,
+      "text": "Okay. I'm not sending in.Okay. Can you please check? I just sent it, I think ten minutes ago, the email.Just let me know if you repeat. It's from Equinix comparison."
+    },
+    {
+      "segment_id": "S069",
+      "speaker": "CUSTOMER",
+      "start": 647.5,
+      "end": 648.8,
+      "text": "Yep.Yep. Correct. Yep."
+    },
+    {
+      "segment_id": "S070",
+      "speaker": "AGENT",
+      "start": 649.2,
+      "end": 652.8,
+      "text": "Yeah. Open the email and then click view plan."
+    },
+    {
+      "segment_id": "S071",
+      "speaker": "CUSTOMER",
+      "start": 653.2,
+      "end": 654.4,
+      "text": "Yeah."
+    },
+    {
+      "segment_id": "S072",
+      "speaker": "AGENT",
+      "start": 654.8,
+      "end": 659.7,
+      "text": "Okay. After you click view plan,you will see the plan details. Right?"
+    },
+    {
+      "segment_id": "S073",
+      "speaker": "CUSTOMER",
+      "start": 660.1,
+      "end": 664.2,
+      "text": "Yep. So you're in the Yep. Travel there, and travel."
+    },
+    {
+      "segment_id": "S074",
+      "speaker": "AGENT",
+      "start": 664.6,
+      "end": 684.6,
+      "text": "So on the lower part of it, can you please click apply now?Yes.Okay. After you click apply now yep. Click apply now, and it will load,and you will go to the modem.K? Now on the modem,can you please look for the Netcom p s forty Wi Fi six modem?"
+    },
+    {
+      "segment_id": "S075",
+      "speaker": "CUSTOMER",
+      "start": 685.0,
+      "end": 689.1,
+      "text": "The Wi Fi six pre configured. Is that the one?"
+    },
+    {
+      "segment_id": "S076",
+      "speaker": "AGENT",
+      "start": 689.5,
+      "end": 704.6,
+      "text": "Yeah. The Netcom CF forty Wi Fi six. Right? CF forty Wi Fi six.Yep. Do you see the zero dollar upfront? Right? Yep. Yep. Yep. Yeah. Can you please select it? Make sure that you selected it."
+    },
+    {
+      "segment_id": "S077",
+      "speaker": "CUSTOMER",
+      "start": 705.0,
+      "end": 706.6,
+      "text": "Yep. I've selected that."
+    },
+    {
+      "segment_id": "S078",
+      "speaker": "AGENT",
+      "start": 707.0,
+      "end": 715.6,
+      "text": "Okay. And then after that, scroll it down.Yep.Now you will see the total minimum cost of three hundred seventeen dollars. Right?"
+    },
+    {
+      "segment_id": "S079",
+      "speaker": "CUSTOMER",
+      "start": 716.0,
+      "end": 717.2,
+      "text": "Yeah."
+    },
+    {
+      "segment_id": "S080",
+      "speaker": "AGENT",
+      "start": 717.6,
+      "end": 755.6,
+      "text": "Yep. You don't have to worry. If you will see the new development fee, right, of two hundred seventy five dollars,You don't have to worry.You will not pay for that because your address is already an NBN ready. That is only applicablefor a newly built house. K? Because they need to install the NBN infrastructure of the address. That's why if you can see, the June development fee, there's aopen and close parenthesisifapplicable.K?But your address is not applicable for that. K? So you just need the payment. And then click next personal detail."
+    },
+    {
+      "segment_id": "S081",
+      "speaker": "CUSTOMER",
+      "start": 756.0,
+      "end": 757.6,
+      "text": "Yep. Next address details?"
+    },
+    {
+      "segment_id": "S082",
+      "speaker": "AGENT",
+      "start": 758.0,
+      "end": 794.7,
+      "text": "Yeah. Make sure all the information are correct, and then click next address detail.It's still showing that minimum cost of three hundred and seventeen, but don't worry about that. I understand. It's okay. You don't need to worry. Okay? It will not be charged the two hundred seven dollars.And then,next address, you will see the address.Yeah. You will see, next address yep. You will need to, select as soon as possibleon the connection date.Andthenon the delivery of the modem, selectyes. K?I mean, the the the, thethe address of the delivery."
+    },
+    {
+      "segment_id": "S083",
+      "speaker": "CUSTOMER",
+      "start": 795.1,
+      "end": 816.8,
+      "text": "Okay. So do you want the modem to be delivered at the current address? Click no? Yes. Select yes. No. Select yes. Because it will be the same address. Right? It will be delivered at the same address. No. They've got a delivery to Unit 4, 18 Harbour View Drive, Parramatta NSW 2150."
+    },
+    {
+      "segment_id": "S084",
+      "speaker": "AGENT",
+      "start": 817.2,
+      "end": 824.1,
+      "text": "I see.Okay. Can you please, select no?Yep. Click no and then select the exact address. K? Yeah."
+    },
+    {
+      "segment_id": "S085",
+      "speaker": "CUSTOMER",
+      "start": 824.5,
+      "end": 828.2,
+      "text": "Unit 4, 18 Harbour View Drive, Parramatta NSW 2150.Opt"
+    },
+    {
+      "segment_id": "S086",
+      "speaker": "AGENT",
+      "start": 828.6,
+      "end": 833.1,
+      "text": "Just let me know if you have any additional questions. K?"
+    },
+    {
+      "segment_id": "S087",
+      "speaker": "CUSTOMER",
+      "start": 833.5,
+      "end": 843.7,
+      "text": "It says addressaddress not found. Please enter correct addressor enter it manually. So I've entered it manually. Right. Sarah, can you please enter it manually?"
+    },
+    {
+      "segment_id": "S088",
+      "speaker": "AGENT",
+      "start": 844.1,
+      "end": 845.3,
+      "text": "That"
+    },
+    {
+      "segment_id": "S089",
+      "speaker": "CUSTOMER",
+      "start": 845.7,
+      "end": 854.2,
+      "text": "I'm trying to stop not still. I'm trying to k.It's still coming up with that. I'll put my card details in."
+    },
+    {
+      "segment_id": "S090",
+      "speaker": "AGENT",
+      "start": 854.6,
+      "end": 878.7,
+      "text": "So it's still coming up with that three hundred and seventeen dollars, but don't worry about that. I see. You don't need to worry. I really guarantee you it will not be charged. K? Okay. So You need to only forty forty two dollars. Detail?Yep. Click next review details. Make sure that the, you,tick the boxesthat you agree. Yep."
+    },
+    {
+      "segment_id": "S091",
+      "speaker": "CUSTOMER",
+      "start": 879.1,
+      "end": 880.3,
+      "text": "Mhmm.Yep."
+    },
+    {
+      "segment_id": "S092",
+      "speaker": "AGENT",
+      "start": 880.7,
+      "end": 883.6,
+      "text": "Nah. Just me. And you will seemhmm."
+    },
+    {
+      "segment_id": "S093",
+      "speaker": "CUSTOMER",
+      "start": 884.0,
+      "end": 886.8,
+      "text": "I'll just try putting it in again."
+    },
+    {
+      "segment_id": "S094",
+      "speaker": "AGENT",
+      "start": 887.2,
+      "end": 891.7,
+      "text": "Again, what is the delivery address? Can you please tell me?"
+    },
+    {
+      "segment_id": "S095",
+      "speaker": "CUSTOMER",
+      "start": 892.1,
+      "end": 896.2,
+      "text": "It's Unit 4, 18 Harbour View Drive, Parramatta NSW 2150."
+    },
+    {
+      "segment_id": "S096",
+      "speaker": "AGENT",
+      "start": 896.6,
+      "end": 916.2,
+      "text": "Okay.Okay. Can do it. Yeah. It's okay. Can you please select,can you please selectyes. I will be the one who will change the delivery address. K? So you will not be worried. Again,18 Harbour View Drive, Parramatta NSW 2150. Right?18 Harbour View Drive, Parramatta NSW 2150? No. No."
+    },
+    {
+      "segment_id": "S097",
+      "speaker": "CUSTOMER",
+      "start": 916.6,
+      "end": 922.7,
+      "text": "No. The address for Harbour View Drive is 18 Harbour View Drive, Parramatta NSW 2150."
+    },
+    {
+      "segment_id": "S098",
+      "speaker": "AGENT",
+      "start": 923.1,
+      "end": 926.4,
+      "text": "Okay.Hang on. That might let me delivery address?"
+    },
+    {
+      "segment_id": "S099",
+      "speaker": "CUSTOMER",
+      "start": 926.8,
+      "end": 943.1,
+      "text": "Hang on. Let me Unit 4, 18 Harbour View Drive, Parramatta NSW 2150.Yeah. It's because it's a,residential complex, and there's two entrances.And one entrance the Harbour View Drive entrance is closed at the moment,so you can't get up that road."
+    },
+    {
+      "segment_id": "S100",
+      "speaker": "AGENT",
+      "start": 943.5,
+      "end": 944.7,
+      "text": "I see. Because"
+    },
+    {
+      "segment_id": "S101",
+      "speaker": "CUSTOMER",
+      "start": 945.1,
+      "end": 950.8,
+      "text": "It's okay. It's I think it's allowing me to put it inbit by bit."
+    },
+    {
+      "segment_id": "S102",
+      "speaker": "AGENT",
+      "start": 951.2,
+      "end": 954.5,
+      "text": "Okay. 18 Harbour View Drive, Parramatta NSW 2150."
+    },
+    {
+      "segment_id": "S103",
+      "speaker": "CUSTOMER",
+      "start": 954.9,
+      "end": 957.8,
+      "text": "18 Harbour View Drive, Parramatta NSW 2150"
+    },
+    {
+      "segment_id": "S104",
+      "speaker": "AGENT",
+      "start": 958.2,
+      "end": 959.4,
+      "text": "."
+    },
+    {
+      "segment_id": "S105",
+      "speaker": "CUSTOMER",
+      "start": 959.8,
+      "end": 962.2,
+      "text": "Okay. So a text message, 583214."
+    },
+    {
+      "segment_id": "S106",
+      "speaker": "AGENT",
+      "start": 962.6,
+      "end": 969.2,
+      "text": "Mhmm. And then click submit application.Just let me know if you already have the reference number."
+    },
+    {
+      "segment_id": "S107",
+      "speaker": "CUSTOMER",
+      "start": 969.6,
+      "end": 970.8,
+      "text": "Yep."
+    },
+    {
+      "segment_id": "S108",
+      "speaker": "AGENT",
+      "start": 971.2,
+      "end": 973.2,
+      "text": "What is the reference number?"
+    },
+    {
+      "segment_id": "S109",
+      "speaker": "CUSTOMER",
+      "start": 973.6,
+      "end": 974.8,
+      "text": "ECX-7319452."
+    },
+    {
+      "segment_id": "S110",
+      "speaker": "AGENT",
+      "start": 975.2,
+      "end": 981.3,
+      "text": "Thank you for that. That means that you already take advantage of the offer. Okay?"
+    },
+    {
+      "segment_id": "S111",
+      "speaker": "CUSTOMER",
+      "start": 981.7,
+      "end": 984.2,
+      "text": "Yeah.So this is an Ambien. Yeah."
+    },
+    {
+      "segment_id": "S112",
+      "speaker": "AGENT",
+      "start": 984.6,
+      "end": 1014.8,
+      "text": "That is an Ambien. K? Yeah. Yeah. Yeah.Okay. Congratulationsfor choosing NovaConnect. You need to wait for the delivery of the modem. It will be three to five business days. K? And after that, you can activate and connect it. And then now since we already help you with your Internet, how about your electricity and gas? Maybe we could also give you a picture of that. No. I don't have gas, and my electricity"
+    },
+    {
+      "segment_id": "S113",
+      "speaker": "CUSTOMER",
+      "start": 1015.2,
+      "end": 1026.2,
+      "text": "is all,With aircon? I buy it off the complex that I live in. It doesn't go through I see. So it's embedded. Or anything like that. Yeah."
+    },
+    {
+      "segment_id": "S114",
+      "speaker": "AGENT",
+      "start": 1026.6,
+      "end": 1036.8,
+      "text": "I see. Okay. If that's the case here, again, Sarah, congratulations for choosing NovaConnect.Thank you also for choosing Econnex Comparison. Do you have another question?"
+    },
+    {
+      "segment_id": "S115",
+      "speaker": "CUSTOMER",
+      "start": 1037.2,
+      "end": 1042.5,
+      "text": "No. Do you have acontact phone number I can contact you on if"
+    },
+    {
+      "segment_id": "S116",
+      "speaker": "AGENT",
+      "start": 1042.9,
+      "end": 1058.0,
+      "text": "I have You will see it,on the, yeah. You will see it on the,you will see the page of the reference number. Right? Below that, you will see all the contact number that you can contact. K?"
+    },
+    {
+      "segment_id": "S117",
+      "speaker": "CUSTOMER",
+      "start": 1058.4,
+      "end": 1059.6,
+      "text": "Yeah. Okay. Yep."
+    },
+    {
+      "segment_id": "S118",
+      "speaker": "AGENT",
+      "start": 1060.0,
+      "end": 1076.8,
+      "text": "Yep. This is it?Okay. Thank you. From the lower price. Okay. Yeah. Again, thank you also, Sarah. Okay? Congratulations.This is Daniel again from Equinix Comparison. Again, it was a pleasure to help you out. K? Cheers, and have a wonderful day."
+    },
+    {
+      "segment_id": "S119",
+      "speaker": "CUSTOMER",
+      "start": 1077.2,
+      "end": 1078.4,
+      "text": "Okay. Thank you."
+    },
+    {
+      "segment_id": "S120",
+      "speaker": "AGENT",
+      "start": 1078.8,
+      "end": 1080.8,
+      "text": "You're welcome.Bye for now. Bye."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+[project]
+name = "hackathon-qa-automation"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "shoaib1207k", email = "shoaib1207k@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "pydantic>=2.13.5",
+    "strands-agents>=1.56.0",
+]
+
+[project.scripts]
+hackathon-qa-automation = "hackathon_qa_automation:main"
+
+[build-system]
+requires = ["uv_build>=0.12.16,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
