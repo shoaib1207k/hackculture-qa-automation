@@ -36,7 +36,10 @@ def _decided(lead_id: str, decision: Decision, reasons: list[str]) -> GateDecisi
 
 def decide(lead_id: str, verdicts: list[CheckVerdict],
            sample_rate: float = CLEAN_CALL_SAMPLE_RATE) -> GateDecision:
-    critical_fails = [v.check_id for v in verdicts if v.critical and v.verdict == "fail"]
+    # A fail the model was unsure about is not grounds to hold a sale as a
+    # confirmed critical fail: it goes to a human (below) instead.
+    critical_fails = [v.check_id for v in verdicts if v.critical and v.verdict == "fail"
+                      and v.confidence >= CONFIDENCE_THRESHOLD]
     if critical_fails:
         return _decided(lead_id, "HOLD", [f"critical fail: {c}" for c in critical_fails])
 

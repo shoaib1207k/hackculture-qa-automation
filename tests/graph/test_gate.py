@@ -17,6 +17,8 @@ def test_gate_rules():
     assert decide("L", [verdict(v="uncertain")], sample_rate=0).decision == "HUMAN_QA"
     assert decide("L", [verdict(confidence=0.5)], sample_rate=0).decision == "HUMAN_QA"
     assert decide("L", [verdict()], sample_rate=0).decision == "AUTO_PASS"
+    # an unsure fail goes to a human instead of being held as a confirmed fail
+    assert decide("L", [verdict(v="fail", confidence=0.4)], sample_rate=0).decision == "HUMAN_QA"
     # a critical fail is never softened by an uncertain check elsewhere
     assert decide("L", [verdict("a", v="fail"), verdict("b", v="uncertain")],
                   sample_rate=0).decision == "HOLD"

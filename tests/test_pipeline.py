@@ -5,10 +5,12 @@ import pytest
 
 from hackathon_qa_automation.checks.factual import scoring as factual
 from hackathon_qa_automation.checks.factual.schemas import FactualComparison, FactualExtraction
+from hackathon_qa_automation.checks.verbatim import scoring as verbatim
+from hackathon_qa_automation.checks.verbatim.schemas import ElementResult, VerbatimExtraction
 from hackathon_qa_automation.pipeline import score_lead
 
 
-def fake_agents(monkeypatch, comparison="match", extract_error=None):
+def fake_agents(monkeypatch, comparison="match", extract_error=None, disclaimer_read=True):
     async def extract(segments, check):
         if extract_error:
             raise extract_error
@@ -20,11 +22,19 @@ def fake_agents(monkeypatch, comparison="match", extract_error=None):
         verdict = comparison(check) if callable(comparison) else comparison
         return FactualComparison(verdict=verdict, confidence=0.95, reasoning="c")
 
+    async def extract_disclaimer(segments, check):
+        e = check.required_elements[0]
+        return VerbatimExtraction(reasoning="r", elements=[ElementResult(
+            element=e, present=disclaimer_read, confidence=0.95,
+            quote="this call will be recorded for quality assuranceand, training purposes"
+            if disclaimer_read else None, segment_ids=["S004"] if disclaimer_read else [])])
+
+    monkeypatch.setattr(verbatim, "extract_verbatim", extract_disclaimer)
     monkeypatch.setattr(factual, "extract_factual", extract)
     monkeypatch.setattr(factual, "compare_factual", compare)
 
 
-async def test_every_check_runs_and_placeholder_verbatim_blocks_auto_pass(monkeypatch):
+async def test_a_clean_call_passes_every_check_and_auto_submits(monkeypatch):
     fake_agents(monkeypatch)
     score = await score_lead("3613790")
     assert score.error is None and score.checklist_version == "R1-v3"
@@ -32,10 +42,15 @@ async def test_every_check_runs_and_placeholder_verbatim_blocks_auto_pass(monkey
         "plan_price_intro", "plan_price_standard", "email_match", "service_address_match",
         "delivery_address_match", "modem_free"]
     assert len(score.verdicts) == 9
-    # every factual + behaviour check passes, but the verbatim placeholder is
-    # "uncertain": a call is never auto-passed on unchecked required statements
-    assert score.decision == "HUMAN_QA"
-    assert score.reasons == ["uncertain or low confidence: recording_disclaimer"]
+    assert {v.verdict for v in score.verdicts} == {"pass"}
+    assert score.decision == "AUTO_PASS"
+
+
+async def test_a_missing_disclaimer_holds_the_sale(monkeypatch):
+    fake_agents(monkeypatch, disclaimer_read=False)
+    score = await score_lead("3613790")
+    assert score.decision == "HOLD"
+    assert score.reasons == ["critical fail: recording_disclaimer"]
 
 
 async def test_a_critical_fail_holds_the_sale_with_reasons(monkeypatch):
