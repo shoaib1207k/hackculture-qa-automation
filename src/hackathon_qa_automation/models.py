@@ -1,9 +1,12 @@
 """Pydantic schemas: transcript, lead, checklist, and the final verdict."""
 
+import logging
 from datetime import date
 from typing import Any, Literal, Optional
 
 from pydantic import BaseModel, Field, model_validator
+
+logger = logging.getLogger(__name__)
 
 CheckType = Literal["verbatim", "factual", "behaviour"]
 Verdict = Literal["pass", "fail", "uncertain"]
@@ -54,6 +57,7 @@ class Lead(BaseModel):
 
 class Check(BaseModel):
     check_id: str
+    description: str = ""
     type: CheckType
     critical: bool = False
     required_elements: list[str] = Field(default_factory=list)  # verbatim
@@ -95,7 +99,11 @@ class Checklist(BaseModel):
         live = [v for v in self.versions if v.effective_from <= call_date]
         if not live:
             raise ValueError(f"No checklist version for {self.retailer_id} was effective on {call_date}")
-        return max(live, key=lambda v: v.effective_from)
+        chosen = max(live, key=lambda v: v.effective_from)
+        logger.info("version_for retailer=%s call_date=%s -> %s (effective %s, %d checks)",
+                    self.retailer_id, call_date, chosen.version, chosen.effective_from,
+                    len(chosen.checks))
+        return chosen
 
 
 # ---------------------------------------------------------------------------
